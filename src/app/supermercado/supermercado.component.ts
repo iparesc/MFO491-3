@@ -8,11 +8,12 @@ import { ProductosService } from '../providers/productos.service';
   styleUrls: ['./supermercado.component.scss']
 })
 export class SupermercadoComponent implements OnInit {
-  producto:Producto;
-  productos:Producto[];
-descuento:boolean;
-searchText:string;
+    producto:Producto;
+    productos:Producto[];
+    descuento:boolean;
+    searchText:string;
   constructor(public productosService : ProductosService) { 
+    console.log('Constructor de productosService');
     this.descuento=false;
   }
 
@@ -20,13 +21,13 @@ searchText:string;
     this.productos = this.productosService.getProductos();
     
   }
-  sumProducto(cantidad) {
+  sumProducto(producto:Producto) {
     
-    let producto;
+    producto=this.producto;
     console.log('sumo productoComponent sumProducto()');
-    this.producto.cantidad++;
+    this.producto.cantidad=this.producto.cantidad++;
   }
-  restarProducto(cantidad){
+  restarProducto() {
     let producto;
     console.log('resto el producto');
     this.producto.cantidad--;

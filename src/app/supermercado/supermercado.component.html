@@ -1,33 +1,31 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container">
         
-            <div class="input-group">
-                <span>Supermercado</span> 
-              <input type="text" [(ngModel)]="searchText"  placeholder=" Buscar en Supermercado" aria-label="Username" aria-describedby="basic-addon1">
-              <div class="input-group-prepend">
+      <div class="input-group">
+            <span>Supermercado</span> 
+            <input type="text" [(ngModel)]="searchText"  placeholder=" Buscar en Supermercado" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"></span>
-                </div>
             </div>
-          
-          
-        
       </div>
-  </nav>
+    </div>
+</nav>
 <div class="row">
     
     <li *ngFor="let producto of productos| filter : searchText">
-        
+        <div *ngIf="producto.descuento===true">
+            <span class="oferta">{{producto.oferta}}%</span>
+          </div>
   <img class="card-img-top" src="{{producto.imagen}}" alt="{{producto.nombre}}">
   
-  <div class="card-body">
-    <h5 class="card-title">{{producto.nombre}}</h5>
-    <p class="card-text">Precio:{{producto.precio}}€</p>
-    <span>Cantidad:<span (click)="restarProducto()">-</span>{{producto.cantidad}}</span><span (click)="sumProducto()">+</span>
+    <div class="card-body">
+      <h5 class="card-title">{{producto.nombre}}</h5>
+      <p class="card-text">Precio:{{producto.precio}}€</p>
+      
+      <span>Cantidad:<span (click)="restarProducto()">-</span>{{producto.cantidad}}</span><span (click)="sumProducto(cantidad)">+</span>
     
     <br>
-    <a href="#" class="btn btn-primary">Añadir Carro</a>
-    <div *ngIf="producto.descuento===true">
-        <span class="oferta">{{producto.oferta}}%</span>
-  </div>
+      <a href="#" class="btn btn-primary">Añadir Carro</a>
+      
 
 </div>
