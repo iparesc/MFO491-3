@@ -20,13 +20,13 @@ searchText:string;
     this.productos = this.productosService.getProductos();
     
   }
-  sumProducto() {
+  sumProducto(cantidad) {
     
     let producto;
     console.log('sumo productoComponent sumProducto()');
     this.producto.cantidad++;
   }
-  restarProducto(){
+  restarProducto(cantidad){
     let producto;
     console.log('resto el producto');
     this.producto.cantidad--;
