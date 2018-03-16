@@ -1,7 +1,7 @@
 export class Producto{
 
-    id : number;
-    foto : string;
+    
+    imagen : string;
     precio : number;
     nombre : string;
     cantidad:number;

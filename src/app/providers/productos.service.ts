@@ -20,7 +20,8 @@ export class ProductosService {
 
     jsonData.forEach( el => {
        producto = new Producto();
-       producto.foto = el.foto;
+       
+       producto.imagen = el.imagen;
        producto.precio = el.precio;
        producto.nombre = el.nombre;
        producto.cantidad= el.cantidad;

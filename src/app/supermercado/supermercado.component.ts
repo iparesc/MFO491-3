@@ -10,6 +10,7 @@ import { ProductosService } from '../providers/productos.service';
 export class SupermercadoComponent implements OnInit {
   productos:Producto[];
 descuento:boolean;
+searchText:string;
   constructor(public productosService : ProductosService) { 
     this.descuento=false;
   }

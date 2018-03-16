@@ -1,12 +1,26 @@
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Thumbnail</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        
+            <div class="input-group">
+                <span>Supermercado</span> 
+              <input type="text" [(ngModel)]="searchText"  placeholder=" Buscar en Supermercado" aria-label="Username" aria-describedby="basic-addon1">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"></span>
+                </div>
+            </div>
+          
+          
+        
       </div>
-    </div>
+  </nav>
+<div class="row">
+    
+    <li *ngFor="let producto of productos| filter : searchText">
+  <img class="card-img-top" src="{{producto.imagen}}" alt="{{producto.nombre}}">
+  <div class="card-body">
+    <h5 class="card-title">{{producto.nombre}}</h5>
+    <p class="card-text">{{producto.precio}}€</p>
+    <a href="#" class="btn btn-primary">Añadir Carro</a>
   </div>
+
 </div>
