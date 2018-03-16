@@ -16,11 +16,18 @@
 <div class="row">
     
     <li *ngFor="let producto of productos| filter : searchText">
+        
   <img class="card-img-top" src="{{producto.imagen}}" alt="{{producto.nombre}}">
+  
   <div class="card-body">
     <h5 class="card-title">{{producto.nombre}}</h5>
-    <p class="card-text">{{producto.precio}}€</p>
+    <p class="card-text">Precio:{{producto.precio}}€</p>
+    <span>Cantidad:<span (click)="restarProducto()">-</span>{{producto.cantidad}}</span><span (click)="sumProducto()">+</span>
+    
+    <br>
     <a href="#" class="btn btn-primary">Añadir Carro</a>
+    <div *ngIf="producto.descuento===true">
+        <span class="oferta">{{producto.oferta}}%</span>
   </div>
 
 </div>

@@ -26,6 +26,7 @@ export class ProductosService {
        producto.nombre = el.nombre;
        producto.cantidad= el.cantidad;
        producto.descuento=el.descuento;
+       producto.oferta=el.oferta;
       
 
        this.productos.push(producto);

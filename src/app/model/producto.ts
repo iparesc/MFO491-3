@@ -6,10 +6,11 @@ export class Producto{
     nombre : string;
     cantidad:number;
     descuento:boolean;
+    oferta:number;
  
     constructor(){
        
-        
+        this.cantidad=0;
     }
     
 }

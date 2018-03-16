@@ -8,6 +8,7 @@ import { ProductosService } from '../providers/productos.service';
   styleUrls: ['./supermercado.component.scss']
 })
 export class SupermercadoComponent implements OnInit {
+  producto:Producto;
   productos:Producto[];
 descuento:boolean;
 searchText:string;
@@ -19,5 +20,15 @@ searchText:string;
     this.productos = this.productosService.getProductos();
     
   }
-
+  sumProducto() {
+    
+    let producto;
+    console.log('sumo productoComponent sumProducto()');
+    this.producto.cantidad++;
+  }
+  restarProducto(){
+    let producto;
+    console.log('resto el producto');
+    this.producto.cantidad--;
+  }
 }
