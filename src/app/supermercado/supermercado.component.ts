@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 import { Producto } from '../model/producto';
 import { ProductosService } from '../providers/productos.service';
 
@@ -8,12 +9,16 @@ import { ProductosService } from '../providers/productos.service';
   styleUrls: ['./supermercado.component.scss']
 })
 export class SupermercadoComponent implements OnInit {
-    producto:Producto;
+    
+    
     productos:Producto[];
+    cantidad:number;
     descuento:boolean;
     searchText:string;
   constructor(public productosService : ProductosService) { 
     console.log('Constructor de productosService');
+  
+    
     this.descuento=false;
   }
 
@@ -21,15 +26,17 @@ export class SupermercadoComponent implements OnInit {
     this.productos = this.productosService.getProductos();
     
   }
-  sumProducto(producto:Producto) {
-    
-    producto=this.producto;
-    console.log('sumo productoComponent sumProducto()');
-    this.producto.cantidad=this.producto.cantidad++;
+
+  sum(product:Producto) {
+  
+    product.cantidad=product.cantidad+1;
+    console.log('se hace la suma');
+
   }
-  restarProducto() {
-    let producto;
-    console.log('resto el producto');
-    this.producto.cantidad--;
+  rest(product:Producto){
+    if(product.cantidad>0){
+    product.cantidad=product.cantidad-1;
+    }
   }
+  
 }

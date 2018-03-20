@@ -61,7 +61,7 @@ export const MOCK_PRODUCTOS = `[
 	{
         "imagen": "https://www.compraonline.grupoeroski.com/images/17985870.jpg",
         "nombre": "Aceite",
-		"precio": 6,
+		"precio": 5,
         "cantidad":0,
         "descuento":true,
         "oferta":20
